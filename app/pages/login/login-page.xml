@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="dark">
+    <ActionBar title="Login" class="action-bar" />
+    
+    <StackLayout class="p-4">
+        <Label text="Username" class="font-bold mb-2" />
+        <TextField text="{{ username }}" hint="Enter username" class="mb-4 p-2" />
+        
+        <Label text="Password" class="font-bold mb-2" />
+        <TextField text="{{ password }}" hint="Enter password" secure="true" class="mb-4 p-2" />
+        
+        <Button text="Login" tap="{{ login }}" class="-primary mb-2" />
+        <Button text="Continue as User" tap="{{ loginAsUser }}" class="-outline" />
+        
+        <Label text="{{ errorMessage }}" class="text-red-500 text-center" textWrap="true" 
+               visibility="{{ errorMessage ? 'visible' : 'collapsed' }}" />
+    </StackLayout>
+</Page>

@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './styles/theme.css';
+
+.action-bar {
+    background-color: var(--color-action-bar);
+    color: var(--color-text);
+}
+
+.job-card {
+    margin: 8 16;
+    padding: 16;
+    background-color: var(--color-card);
+    border-radius: 8;
+    elevation: 2;
+}
+
+.priority-high {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.priority-medium {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.priority-low {
+    color: #10b981;
+    font-weight: bold;
+}
+
+Page {
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+ListView {
+    height: 100%;
+    separator-color: transparent;
+}
+
+Button {
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+}
+
+Label {
+    color: var(--color-text);
+}
+
+.text-secondary {
+    color: var(--color-text-secondary);
+}
+
+/* Comments styling */
+.comments-list {
+    margin: 8 0;
+}
+
+.comment-card {
+    margin: 8;
+    padding: 12;
+    background-color: var(--color-card);
+    border-radius: 8;
+    border-width: 1;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.comment-username {
+    font-size: 16;
+    font-weight: bold;
+    margin-bottom: 4;
+    color: #3b82f6;
+}
+
+.comment-text {
+    font-size: 14;
+    margin: 4 0;
+    padding: 4 0;
+}
+
+.comment-date {
+    font-size: 12;
+    color: var(--color-text-secondary);
+    margin-top: 4;
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Add New Job" class="action-bar">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" />
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Job Title" class="font-bold" />
+            <TextField text="{{ title }}" hint="Enter job title" class="mb-3" />
+
+            <Label text="Description" class="font-bold" />
+            <TextView text="{{ description }}" hint="Enter job description" height="100" class="mb-3" />
+
+            <Label text="Priority" class="font-bold" />
+            <ListPicker items="{{ priorities }}" selectedIndex="{{ selectedPriorityIndex }}" class="mb-3" />
+
+            <Label text="Location" class="font-bold" />
+            <TextField text="{{ location }}" hint="Enter job location" class="mb-3" />
+
+            <Label text="Budget" class="font-bold" />
+            <TextField text="{{ budget }}" hint="Enter budget" keyboardType="number" class="mb-3" />
+
+            <Label text="Contact Person" class="font-bold" />
+            <TextField text="{{ contactPerson }}" hint="Enter contact person" class="mb-3" />
+
+            <Label text="Contact Phone" class="font-bold" />
+            <TextField text="{{ contactPhone }}" hint="Enter contact phone" keyboardType="phone" class="mb-3" />
+
+            <Button text="Save Job" tap="{{ saveJob }}" class="-primary" />
+        </StackLayout>
+    </ScrollView>
+</Page>

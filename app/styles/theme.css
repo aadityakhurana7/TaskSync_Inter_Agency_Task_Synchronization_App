@@ -1,0 +1,10 @@
+/* Dark theme colors */
+.dark {
+    --color-background: #1a1a1a;
+    --color-card: #2d2d2d;
+    --color-text: #ffffff;
+    --color-text-secondary: #a3a3a3;
+    --color-action-bar: #1e40af;
+    --color-button: #3b82f6;
+    --color-button-text: #ffffff;
+}

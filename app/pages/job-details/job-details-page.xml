@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="dark">
+    <ActionBar title="Job Details" class="action-bar">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" />
+        <ActionItem tap="{{ logout }}" ios.position="right" android.position="actionBar">
+            <Label text="Sign Out" class="text-base" />
+        </ActionItem>
+    </ActionBar>
+
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="{{ job.title }}" class="text-2xl font-bold mb-2" textWrap="true" />
+            <Label text="{{ job.description }}" class="text-base mb-4" textWrap="true" />
+            
+            <!-- Status and Actions Section -->
+            <GridLayout columns="auto, *, auto" class="mb-4 p-2 bg-gray-800 rounded-lg">
+                <Label text="{{ job.priority }}" col="0" class="{{ 'priority-' + job.priority.toLowerCase() }}" />
+                <Label text="{{ job.status }}" col="1" class="text-right mx-4" />
+                <Button text="Close Job" 
+                        tap="{{ closeJob }}" 
+                        col="2" 
+                        class="-primary"
+                        width="100"
+                        visibility="{{ canCloseJob ? 'visible' : 'collapsed' }}"
+                        isEnabled="{{ job.status === 'Open' }}" />
+            </GridLayout>
+            
+            <Label text="{{ job.location }}" class="text-secondary" textWrap="true" />
+            <Label text="{{ 'Budget: $' + job.budget }}" class="text-secondary mb-4" />
+            
+            <!-- Comments Section -->
+            <Label text="Comments" class="text-xl font-bold mb-2" />
+            <GridLayout rows="auto" columns="*, auto" class="mb-4">
+                <TextField text="{{ newComment }}" hint="Add a comment" col="0" class="mr-2" />
+                <Button text="Add" tap="{{ addComment }}" col="1" class="-primary" width="80" />
+            </GridLayout>
+            
+            <ListView items="{{ comments }}" height="200" class="comments-list">
+                <ListView.itemTemplate>
+                    <StackLayout class="comment-card">
+                        <Label text="{{ username }}" class="comment-username" />
+                        <Label text="{{ text }}" class="comment-text" textWrap="true" />
+                        <Label text="{{ formattedDate }}" class="comment-date" />
+                    </StackLayout>
+                </ListView.itemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</Page>
